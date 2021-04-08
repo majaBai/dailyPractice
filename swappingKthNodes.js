@@ -27,7 +27,6 @@ function ListNode(val, next) {
       this.val = (val===undefined ? 0 : val)
         this.next = (next===undefined ? null : next)
 }
-
 function swapArr(arr, i, j){
     let temp = arr[i]
     arr[i] = arr[j]
