@@ -10,7 +10,7 @@ class MaxHeap{
     pop(){
         let r = this.heap[1]
         this.swap(1, this.size--)
-        this.heap[this.size++] = undefined
+        this.heap[this.size+1] = undefined
         this.sink(1)
         return r
     }
@@ -20,11 +20,11 @@ class MaxHeap{
     isEmpty(){
         return this.size === 0
     }
-    size(){
+    getSize(){
         return this.size
     }
     swim(idx){
-        while(Math.floor(idx/2) > 0 && greater(idx, Math.floor(idx/2))){
+        while(Math.floor(idx/2) > 0 && this.greater(idx, Math.floor(idx/2))){
             this.swap(idx, Math.floor(idx/2))
             idx = Math.floor(idx/2)
         }
@@ -42,8 +42,8 @@ class MaxHeap{
         return this.heap[i] > this.heap[j]
     }
     swap(i, j){
-        let temp = this.queue[i]
-        this.queue[i] =  this.queue[j]
-        this.queue[j] = temp
+        let temp = this.heap[i]
+        this.heap[i] =  this.heap[j]
+        this.heap[j] = temp
     }
 }
