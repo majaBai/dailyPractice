@@ -33,6 +33,6 @@ var intersect = function(nums1, nums2) {
 function main(){
     let t1 =[1, 2, 2, 1], t2=[2, 2]
     let r1 = intersect(t1, t2)
-    console.log(r1)
+    console.log(r1) //[ 2, 2 ]
 }
 main()
