@@ -44,6 +44,27 @@ var copyRandomList = function(head) {
     return cloneHead
 };
 
+function solution2(head){
+    if(head === null) return head
+    let map = new Map()
+
+    let cur = head
+    while(cur){
+        map.set(cur,new Node(cur.val, null, null))
+        cur = cur.next
+    }
+    
+    console.log(map)
+    cur = head
+    while(cur){
+        map.get(cur).next = map.get(cur.next)
+        map.get(cur).random = map.get(cur.random)
+        cur = cur.next
+    }
+
+    return map.get(head)
+}
+
 
 
 function Node(val, next, random) {
@@ -56,7 +77,7 @@ function main(){
     let n2 = new Node(2, null, null)
     let n1 = new Node(1, n2, n2)
 
-    let res = copyRandomList(n1)
+    let res = solution2(n1)
     console.log(res)
 }
 main()
