@@ -57,8 +57,8 @@ function solution2(head){
     console.log(map)
     cur = head
     while(cur){
-        map.get(cur).next = map.get(cur.next)
-        map.get(cur).random = map.get(cur.random)
+        map.get(cur).next = map.get(cur.next) || null
+        map.get(cur).random = map.get(cur.random) || null
         cur = cur.next
     }
 
