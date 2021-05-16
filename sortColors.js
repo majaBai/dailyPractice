@@ -16,7 +16,7 @@ Output: [0,0,1,1,2,2]
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function(nums) {
-    let lo =-1, i = 0, hi = nums.length
+    let lo = -1, i = 0, hi = nums.length
     while(i < hi){
         if(nums[i] === 0){
             swap(nums, ++lo, i)
